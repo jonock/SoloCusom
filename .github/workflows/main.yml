@@ -14,3 +14,12 @@ jobs:
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+  deploy_2:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1.6.3
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL_2 }}
+          api-key: ${{ secrets.GHOST_ADMIN_KEY_2 }}
